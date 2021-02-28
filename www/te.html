@@ -1,0 +1,27 @@
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
+
+<audio src='https://img.tukuppt.com/newpreview_music/00/10/94/5d819c5befca297748.mp3' style='display:none' id='audio'></audio>
+
+
+<script>
+function gex()
+{
+$.ajax({
+        type:"GET",
+        url:"/%E7%BE%8E%E5%9B%A2/close.txt",
+        dataType:"html",
+        success:function(data){
+            console.log(data)
+			if (data != 'open')
+			{
+				addVoice();
+			}
+        }
+        
+});
+}
+interval = window.setInterval("gex()",1000);
+function addVoice(){
+    document.getElementById('audio').play();
+}
+</script>
